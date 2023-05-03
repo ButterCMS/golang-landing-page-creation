@@ -1,0 +1,95 @@
+{{ define "template.html"}}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{.PageTitle}}</title>
+    <link rel="stylesheet" href="/static/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <style>
+    header {
+      background: url("{{.Hero.ImageURL}}") no-repeat center center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 20px;
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="#"><i class="fa fa-home"></i> Home</a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-shopping-cart"></i> My cart</a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-info-circle"></i> About Us</a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-envelope"></i> Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="hero">
+        {{with .Hero}}
+        <h1>{{.Headline}}</h1>
+        <p>{{.Description}}</p>
+        <a href="#" class="btn">{{.ButtonLabel}}</a>
+      </div>
+      {{end}}
+    </header>
+    <main>
+      <section class="features">
+        {{ range $index, $feature := .Features }}
+        <div class="feature-box">
+          {{ if eq $index 0 }}
+          <i class="fa fa-ship"></i>
+          {{ else if eq $index 1 }}
+          <i class="fa fa-gift"></i>
+          {{ else if eq $index 2 }}
+          <i class="fa fa-headphones"></i>
+          {{ end }}
+          <h2>{{ $feature.Headline }}</h2>
+          <p>{{ $feature.Description }}</p>
+        </div>
+        {{ end }}
+      </section>
+
+      <section class="products">
+        <h2>Featured Products</h2>
+        {{ range .Products}}
+        <div class="product">
+          <img src="{{.ImageURL}}" alt="{{ .ImgAltText}}" />
+          <h3>{{.Name}}</h3>
+          <p>{{.Price}}</p>
+          <a href="#" class="btn">Add to Cart</a>
+        </div>
+        {{end}}
+      </section>
+    </main>
+    <footer>
+      <div class="social-links">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-youtube"></i></a>
+      </div>
+      <p>&copy; 2023 My Ecommerce Site. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
+{{ end}}

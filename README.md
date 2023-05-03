@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="ui/static/img/uLdEqE1c.png" alt="ButterCMS-landing-page" width="700"/>
+  <img src="ui/static/img/fhVWqMRW.png" alt="ButterCMS-landing-page" width="700"/>
 </p>
 
 # E-commerce Landing Page with Golang and ButterCMS
@@ -24,7 +24,7 @@ To get started with the tutorial, follow these steps:
 
 1. Clone the repository:
 ```sh
-git clone https://github.com/ButterCMS/ecommerce-landing-page.git
+git clone https://github.com/ButterCMS/golang-landing-page-creation
 ```
 2. Install the required Golang packages:
 ```bash
@@ -45,7 +45,7 @@ go run server/cmd/*
 The application should now be running on http://localhost:8080/landing-page.
 
 ## Tutorial
-The tutorial is broken down into several steps, which are explained in detail in the [tutorial](https://buttercms.com/blog/golang-landing-page-tutorial/) section of the project.
+The tutorial is broken down into several steps, which are explained in detail in the [tutorial](https://buttercms.com/blog/golang-app-tutorial-ecommerce-landing-pages/) section of the project.
 
 ## Conclusion
-By following this tutorial, you should have learned how to create an e-commerce landing page using Golang and ButterCMS. With Golang and ButterCMS, you can create fast and responsive web applications with ease.
+By following this tutorial, you should have learned how to create an e-commerce landing page using Golang and ButterCMS. With ButterCMS and Golang, you can create fast and responsive web applications with ease.
